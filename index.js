@@ -1,17 +1,14 @@
 const express = require("express");
 const { MongoClient, ObjectId, HostAddress } = require("mongodb");
-const url =
-  "mongodb+srv://admin:LF5RH2DP58@9CtF@cluster0.3y5kc.mongodb.net";
+// const url = "mongodb+srv://admin:LF5RH2DP58@9CtF@cluster0.3y5kc.mongodb.net";
+const url = "mongodb://localhost:27017";
 const dbName = "ocean_bancodados_18_01_2022";
 
 async function main() {
   // Conexão com o Banco de Dados
-
-  //   const client = await MongoClient.connect(url);
-  //   const db = client.db(dbName);
-  //   const collection = db.collection("herois");
-
-  const collection = undefined;
+  const client = await MongoClient.connect(url);
+  const db = client.db(dbName);
+  const collection = db.collection("herois");
 
   // Aplicação em Express
   const app = express();
@@ -25,7 +22,7 @@ async function main() {
 
   // Endpoint "/"
   app.get("/", (req, res) => {
-    res.send("Hello, World!");
+    res.send("<h1>Hello, World!</h1>");
   });
 
   // Endpoint "/oi"
