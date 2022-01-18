@@ -9,12 +9,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.2",
-    "mongodb": "^4.3.0"
+    "express": "latest",
+    "mongodb": "latest"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "latest"
   }
 }
