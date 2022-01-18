@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient, ObjectId } = require("mongodb");
+const { MongoClient, ObjectId, HostAddress } = require("mongodb");
 
 const url = "mongodb://localhost:27017";
 // const url = "mongodb+srv://admin:hd2rV5duoPrrIi3t@cluster0.jup2c.mongodb.net/";
@@ -85,8 +85,11 @@ async function main() {
 
         res.send("Item removido com sucesso.");
     });
-
-    app.listen(3000);
+// [LISTEN]
+    app.listen(3000, function () {
+        console.log("Servidor iniciado na porta 3000.");
+        console.log("http://localhost:3000");
+    });
 }
 
 main();
