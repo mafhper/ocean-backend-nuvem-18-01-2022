@@ -1,6 +1,7 @@
-const express = require("express");
 require("dotenv").config();
-const { MongoClient, ObjectId, HostAddress } = require("mongodb");
+
+const express = require("express");
+const { MongoClient, ObjectId } = require("mongodb");
 
 const dbUser = process.env.DB_USER;
 const dbHost = process.env.DB_HOST;
@@ -9,8 +10,6 @@ const dbName = process.env.DB_NAME;
 
 const url = `mongodb+srv://${dbUser}:${dbPassword}@${dbHost}`;
 //const url = "mongodb://localhost:27017";
-
-
 
 async function main() {
   // Conexão com o Banco de Dados
